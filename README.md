@@ -1,52 +1,82 @@
 ## dash-dot
 
+Operations monitoring and response system.
+
+Green dot - life is good - low priority tickets
+...       - plenty to do - 1|0 high priority tickets
+Red dot   - Dash'ing     - 2+ high priority tickets
+
+## Status
+
+POC iterations
+
 [![Test Build Status](https://travis-ci.org/pahoughton/...png)](https://travis-ci.org/pahoughton/..)
 
-Operations monitoring and response system.
+## dependencies
+
+- el (yum) - yum install ansible
+- deb (apt) - apt install ansible
+- all
+
+pip3 install ansible
+$ git clone https://github.com/pahoughton/dot-dash
+$ cd dash-dot
+# yum|apt install pip3 g++ libffi-dev libre2-dev libssl-dev
+$ FIXME sudo ansible-playbook -p depend-site.yml
 
 ## Validation
 
-./PROVE-IT.bash
+rake test
+# do grep ':[0-9]+ molecule test' test/rake.test.runtimes.txt ; done
+# echo for test run times
+# do tail -f test/rake.test.runtimes.txt ; done
+# echo to watch progress
 
 ## Features
 
-itterative poc for automation of the scaling, administration and
-mantenance of functionallity.
+ - Open Source
+ - Monitoring system
+	 response times
+	 resource utilization
+	 applications
+	 hardware
+ - Alerting system
+ - Ticket system
 
-when the dot is not pretty, you dash off too learn why and what you
-can do to beautify the dot.
+## Tools (FIXME LINKS)
 
-end game? elimination of repetition through iterative validation
-(D.R.Y.).
+monitoring:
+  Prometheus node exporter
+  Telegraf
+  syslog
+  LogStash
+  Metricbeat
 
-Open Source first ...
+alerting:
+  ElasticSearch(ELK)
+    open source
+    designed for long term storage
+  Prometheus
+	open source
+    15 day retention w/o easy long term storage
+    https://prometheus.io/docs/alerting/overview/
+    https://www.robustperception.io/scaling-and-federating-prometheus/
 
-Single entry point (url) for application, system and hardware status
-with built in research paths.
-
-First url is the dot which a visual artist will be able to provide a
-quick view with details becomeing more obvious the more you look (ok a
-BIG CIRCLE, not a dot :).
-
-The dash is what happens next. Respond to the dot and it will expand
-to more detail releative to who you are (w/ opts).
-
-as the images provide the research path and ongoing status, the are
-watching your progress, time to action, actions taken through
-closure.  We live we Learn :). When everyone's responce to the dot is
-to smile and stop looking, we get to play with then next toy
-
-Every imperfection generates and assigns a ticket. closed tickets
-include proactive steps to automate everything, excluding the user
-decision steps.
-
-First cut, Grafana will generate the dot and all other images.
-
-Ties user activity to performance impacts.
-
-
+Graphs:  Grafana
+ci/cd:   Zuul
+ticket:
+    jira
+		has api
+		has alerting interfaces (ELK & Prometheus)
+	bugzilla - loosing popularity to phabricator
+	phabricator
+	   has api
+	   does not have interface w/ alerting tools
+	openproject https://github.com/opf/openproject
 
 ## Use Cases
+
+Retention: save everything forever - iterate data driven automation
 
 from an engineers perspective ...
 
@@ -58,10 +88,38 @@ validation of the automated responce to the event.
 Provide complete relative details for imperfections with responce time
 relative to age and utilization.
 
-DELETE DELETE (delete nothing ... yet)
+Single entry point (url) for application, system and hardware status
+with built in research paths.
 
-As we move to more self iterating processes and less expensive
-retention, most all data becomes useful in one way or another.
+Ties user activity to hardware performance.
+
+UI First url is the dot which a visual artist will be able to provide a
+quick view with details becomeing more obvious the more you look (ok a
+BIG CIRCLE, not a dot :).
+
+The dash is what happens next. Respond to the dot and it provides the
+path to more detail relative to who you are.
+
+as the images provide the research path and ongoing status, the are
+watching your progress, time to action, actions taken through
+closure.  We live we Learn :). When everyone's responce to the dot is
+to smile and stop looking, we get to play with then next toy
+
+Every imperfection generates and assigns a ticket. closed tickets
+include automation potential.
+
+## Notes
+
+Monitoring and Ticketing UI will be plenty. Tickets are monitored and
+both are fed from the same hands. Tickets provide notification,
+tracking and knowledge base. The monitor will have relevant ticket
+summaries.
+
+when the dot is not pretty, you dash off too learn why and what you
+can do to beautify the dot.
+
+end game? elimination of repetition through iterative validation
+(D.R.Y.).
 
 
 ## Install
@@ -74,7 +132,9 @@ url
 
 ## Contribute
 
-[Github pahoughton/..](https://github.com/pahoughton/..)
+validated pull request will be reviewed and merged.
+
+[Github pahoughton/dot-dash](https://github.com/pahoughton/dot-dash)
 
 ## Licenses
 

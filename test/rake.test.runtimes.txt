@@ -1,0 +1,303 @@
+2018-10-14-12:31:04 PM molecule test start
+ERROR: 'molecule/*/molecule.yml' glob failed.  Exiting.
+2018-10-14-12:31:04 PM molecule test stop
+2018-10-14-12:32:00 PM molecule test start
+ERROR: 'molecule/*/molecule.yml' glob failed.  Exiting.
+2018-10-14-12:32:01 PM molecule test stop
+2018-10-14-12:32:32 PM molecule test start
+2018-10-14-12:32:32 PM molecule test stop
+2018-10-14-12:33:06 PM molecule test start
+2018-10-14-12:33:06 PM molecule test stop
+2018-10-14-12:33:25 PM molecule test start
+2018-10-14-12:33:25 PM molecule test stop
+2018-10-14-12:34:01 PM molecule test start
+2018-10-14-12:34:01 PM molecule test stop
+2018-10-14-12:34:38 PM molecule test start
+2018-10-14-12:34:38 PM molecule test stop
+2018-10-14-12:35:14 PM molecule test start
+2018-10-14-12:35:14 PM molecule test stop
+2018-10-14-12:35:36 PM molecule test start
+2018-10-14-12:35:36 PM molecule test stop
+2018-10-14-12:35:52 PM molecule test start
+2018-10-14-12:36:47 PM molecule test start
+2018-10-14-12:37:43 PM molecule test start
+--> Validating schema /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default/molecule.yml.
+Validation completed successfully.
+--> Test matrix
+    
+└── default
+    ├── lint
+    ├── destroy
+    ├── dependency
+    ├── syntax
+    ├── create
+    ├── prepare
+    ├── converge
+    ├── idempotence
+    ├── side_effect
+    ├── verify
+    └── destroy
+    
+--> Scenario: 'default'
+--> Action: 'lint'
+--> Executing Yamllint on files found in /home/paul/wip/dot-dash/test/deployment/roles/serverspec/...
+Lint completed successfully.
+--> Executing Flake8 on files found in /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default/tests/...
+Lint completed successfully.
+--> Executing Ansible Lint on /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default/playbook.yml...
+Lint completed successfully.
+--> Scenario: 'default'
+--> Action: 'destroy'
+    
+    PLAY [Destroy] *****************************************************************
+    
+    TASK [Destroy molecule instance(s)] ********************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Wait for instance(s) deletion to complete] *******************************
+    ok: [localhost] => (item=None)
+    ok: [localhost]
+    
+    TASK [Delete docker network(s)] ************************************************
+    
+    PLAY RECAP *********************************************************************
+    localhost                  : ok=2    changed=1    unreachable=0    failed=0
+    
+    
+--> Scenario: 'default'
+--> Action: 'dependency'
+Skipping, missing the requirements file.
+--> Scenario: 'default'
+--> Action: 'syntax'
+    
+    playbook: /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default/playbook.yml
+    
+--> Scenario: 'default'
+--> Action: 'create'
+    
+    PLAY [Create] ******************************************************************
+    
+    TASK [Log into a Docker registry] **********************************************
+    skipping: [localhost] => (item=None)
+    
+    TASK [Create Dockerfiles from image names] *************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Discover local Docker images] ********************************************
+    ok: [localhost] => (item=None)
+    ok: [localhost]
+    
+    TASK [Build an Ansible compatible image] ***************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Create docker network(s)] ************************************************
+    
+    TASK [Create molecule instance(s)] *********************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Wait for instance(s) creation to complete] *******************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    PLAY RECAP *********************************************************************
+    localhost                  : ok=5    changed=4    unreachable=0    failed=0
+    
+    
+--> Scenario: 'default'
+--> Action: 'prepare'
+Skipping, prepare playbook not configured.
+--> Scenario: 'default'
+--> Action: 'converge'
+    
+    PLAY [Converge] ****************************************************************
+    
+    TASK [Gathering Facts] *********************************************************
+    ok: [instance]
+    
+    PLAY RECAP *********************************************************************
+    instance                   : ok=1    changed=0    unreachable=0    failed=0
+    
+    
+--> Scenario: 'default'
+--> Action: 'idempotence'
+Idempotence completed successfully.
+--> Scenario: 'default'
+--> Action: 'side_effect'
+Skipping, side effect playbook not configured.
+--> Scenario: 'default'
+--> Action: 'verify'
+--> Executing Testinfra tests found in /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default/tests/...
+    ============================= test session starts ==============================
+    platform linux2 -- Python 2.7.15rc1, pytest-3.8.2, py-1.7.0, pluggy-0.7.1
+    rootdir: /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default, inifile:
+    plugins: testinfra-1.16.0
+    collecting 0 items                                                             collecting 1 item                                                              collected 1 item
+    
+    tests/test_default.py .                                                  [100%]
+    
+    =========================== 1 passed in 4.57 seconds ===========================
+Verifier completed successfully.
+--> Scenario: 'default'
+--> Action: 'destroy'
+    
+    PLAY [Destroy] *****************************************************************
+    
+    TASK [Destroy molecule instance(s)] ********************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Wait for instance(s) deletion to complete] *******************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Delete docker network(s)] ************************************************
+    
+    PLAY RECAP *********************************************************************
+    localhost                  : ok=2    changed=2    unreachable=0    failed=0
+    
+    
+2018-10-14-12:40:05 PM molecule test start
+--> Validating schema /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default/molecule.yml.
+Validation completed successfully.
+--> Test matrix
+    
+└── default
+    ├── lint
+    ├── destroy
+    ├── dependency
+    ├── syntax
+    ├── create
+    ├── prepare
+    ├── converge
+    ├── idempotence
+    ├── side_effect
+    ├── verify
+    └── destroy
+    
+--> Scenario: 'default'
+--> Action: 'lint'
+--> Executing Yamllint on files found in /home/paul/wip/dot-dash/test/deployment/roles/serverspec/...
+Lint completed successfully.
+--> Executing Flake8 on files found in /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default/tests/...
+Lint completed successfully.
+--> Executing Ansible Lint on /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default/playbook.yml...
+Lint completed successfully.
+--> Scenario: 'default'
+--> Action: 'destroy'
+    
+    PLAY [Destroy] *****************************************************************
+    
+    TASK [Destroy molecule instance(s)] ********************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Wait for instance(s) deletion to complete] *******************************
+    ok: [localhost] => (item=None)
+    ok: [localhost]
+    
+    TASK [Delete docker network(s)] ************************************************
+    
+    PLAY RECAP *********************************************************************
+    localhost                  : ok=2    changed=1    unreachable=0    failed=0
+    
+    
+--> Scenario: 'default'
+--> Action: 'dependency'
+Skipping, missing the requirements file.
+--> Scenario: 'default'
+--> Action: 'syntax'
+    
+    playbook: /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default/playbook.yml
+    
+--> Scenario: 'default'
+--> Action: 'create'
+    
+    PLAY [Create] ******************************************************************
+    
+    TASK [Log into a Docker registry] **********************************************
+    skipping: [localhost] => (item=None)
+    
+    TASK [Create Dockerfiles from image names] *************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Discover local Docker images] ********************************************
+    ok: [localhost] => (item=None)
+    ok: [localhost]
+    
+    TASK [Build an Ansible compatible image] ***************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Create docker network(s)] ************************************************
+    
+    TASK [Create molecule instance(s)] *********************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Wait for instance(s) creation to complete] *******************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    PLAY RECAP *********************************************************************
+    localhost                  : ok=5    changed=4    unreachable=0    failed=0
+    
+    
+--> Scenario: 'default'
+--> Action: 'prepare'
+Skipping, prepare playbook not configured.
+--> Scenario: 'default'
+--> Action: 'converge'
+    
+    PLAY [Converge] ****************************************************************
+    
+    TASK [Gathering Facts] *********************************************************
+    ok: [instance]
+    
+    PLAY RECAP *********************************************************************
+    instance                   : ok=1    changed=0    unreachable=0    failed=0
+    
+    
+--> Scenario: 'default'
+--> Action: 'idempotence'
+Idempotence completed successfully.
+--> Scenario: 'default'
+--> Action: 'side_effect'
+Skipping, side effect playbook not configured.
+--> Scenario: 'default'
+--> Action: 'verify'
+--> Executing Testinfra tests found in /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default/tests/...
+    ============================= test session starts ==============================
+    platform linux2 -- Python 2.7.15rc1, pytest-3.8.2, py-1.7.0, pluggy-0.7.1
+    rootdir: /home/paul/wip/dot-dash/test/deployment/roles/serverspec/molecule/default, inifile:
+    plugins: testinfra-1.16.0
+    collecting 0 items                                                             collecting 1 item                                                              collected 1 item
+    
+    tests/test_default.py .                                                  [100%]
+    
+    =========================== 1 passed in 3.70 seconds ===========================
+Verifier completed successfully.
+--> Scenario: 'default'
+--> Action: 'destroy'
+    
+    PLAY [Destroy] *****************************************************************
+    
+    TASK [Destroy molecule instance(s)] ********************************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Wait for instance(s) deletion to complete] *******************************
+    changed: [localhost] => (item=None)
+    changed: [localhost]
+    
+    TASK [Delete docker network(s)] ************************************************
+    
+    PLAY RECAP *********************************************************************
+    localhost                  : ok=2    changed=2    unreachable=0    failed=0
+    
+    
+2018-10-14-12:40:25 PM molecule test stop

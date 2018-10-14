@@ -1,0 +1,6 @@
+# 2018-10-14 (cc) <paul4hough@gmail.com>
+#
+---
+pahfixme:
+  pip:
+    ansible
