@@ -2,6 +2,14 @@
 
 [![Test Build Status](https://travis-ci.org/pahoughton/...png)](https://travis-ci.org/pahoughton/..)
 
+Operations monitoring and response system.
+
+## Validation
+
+./PROVE-IT.bash
+
+## Features
+
 itterative poc for automation of the scaling, administration and
 mantenance of functionallity.
 
@@ -10,12 +18,6 @@ can do to beautify the dot.
 
 end game? elimination of repetition through iterative validation
 (D.R.Y.).
-
-## Validation
-
-./prove-it
-
-## Features
 
 Open Source first ...
 
@@ -40,6 +42,10 @@ decision steps.
 
 First cut, Grafana will generate the dot and all other images.
 
+Ties user activity to performance impacts.
+
+
+
 ## Use Cases
 
 from an engineers perspective ...
@@ -57,36 +63,14 @@ DELETE DELETE (delete nothing ... yet)
 As we move to more self iterating processes and less expensive
 retention, most all data becomes useful in one way or another.
 
-Nextiva provides an improving experience.
-
-
-
-
-
-
-
-
-
-
-
-blown
-off, the better the system is working.
-
-
-
-
-
-
-
-
 
 ## Install
 
-Can't
+./install
 
 ## Usage
 
-You wouldn't want to.
+url
 
 ## Contribute
 
@@ -94,7 +78,7 @@ You wouldn't want to.
 
 ## Licenses
 
-(cc) <paul4hough@gmail.com>
+2018-09-05 (cc) <paul4hough@gmail.com>
 
 [![LICENSE](http://i.creativecommons.org/l/by/3.0/88x31.png)](http://creativecommons.org/licenses/by/3.0/)
 
