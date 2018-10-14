@@ -16,5 +16,12 @@ scenario:
   name: default
 verifier:
   name: testinfra
+  options:
+    r: a
+    color: false
+    durations: 0
+    junit-xml: testinfra-junit-xml.out
+    junit-prefix: serverspec
+    spec: true
   lint:
     name: flake8

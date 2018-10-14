@@ -31,6 +31,7 @@ rake test
 # echo for test run times
 # do tail -f test/rake.test.runtimes.txt ; done
 # echo to watch progress
+  758  pip3 install ansible molecule pytest pytest-spec testinfra
 
 ## Features
 

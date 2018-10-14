@@ -1,0 +1,8 @@
+# 2018-10-14 (cc) <paul4hough@gmail.com>
+#
+---
+- hosts: all
+
+  tasks:
+    - name: "prepare fix repos"
+      shell: echo "FIXME fix repos"

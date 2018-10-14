@@ -3,4 +3,7 @@
 ---
 pahfixme:
   pip:
-    ansible
+    - ansible
+
+  ansible-role:
+    - pahoughton/apt-cacher-ng
