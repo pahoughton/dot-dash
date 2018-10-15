@@ -2,34 +2,34 @@
 
 Operations monitoring and response system.
 
-Green dot - life is good - low priority tickets
-...       - plenty to do - 1|0 high priority tickets
-Red dot   - Dash'ing     - 2+ high priority tickets
+- Green dot - life is good - low priority tickets
+- ...       - plenty to do - 1|0 high priority tickets
+- Red dot   - Dash'ing     - 2+ high priority tickets
 
 ## Status
 
-POC iterations (rake.test.runtimes.txt i hope)[test/rake.test.runtimes.txt]
-
 [![Test Build Status](https://travis-ci.org/pahoughton/dot-dash.png)](https://travis-ci.org/pahoughton/dot-dash)
 
+POC iterations [rake.test.runtimes.txt i hope](test/rake.test.runtimes.txt)
 
 
 ## Dependencies
+```
+$ [ -e yum ] && sudo yum install ansible
+$ [ -e apt ] && sudo apt install ansible
 
-	$ [ -e yum ] && sudo yum install ansible
-	$ [ -e apt ] && sudo apt install ansible
-
-	$ git clone https://github.com/pahoughton/dot-dash
-	$ cd dash-dot
-	$ sudo ansible-playbook -p site-depends.yml
-
+$ git clone https://github.com/pahoughton/dot-dash
+$ cd dash-dot
+$ sudo ansible-playbook -p site-depends.yml
+```
 ## Validation
-
-	rake test
-    $ do grep ':[0-9]+ molecule test' test/rake.test.runtimes.txt ; done
-    # echo for test run times
-    $ do tail -f test/rake.test.runtimes.txt ; done
-    # echo to watch progress
+```
+rake test
+$ do grep ':[0-9]+ molecule test' test/rake.test.runtimes.txt ; done
+# echo for test run times
+$ do tail -f test/rake.test.runtimes.txt ; done
+# echo to watch progress
+```
 
 ## Features
 
