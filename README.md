@@ -1,6 +1,6 @@
 ## dash-dot
 
-Operations monitoring and response system.
+Monitoring and response system.
 
 - Green dot - life is good - low priority tickets
 - ...       - plenty to do - 1|0 high priority tickets
@@ -10,8 +10,7 @@ Operations monitoring and response system.
 
 [![Test Build Status](https://travis-ci.org/pahoughton/dot-dash.png)](https://travis-ci.org/pahoughton/dot-dash)
 
-POC iterations [rake.test.runtimes.txt i hope](test/rake.test.runtimes.txt)
-
+POC iterating [test runtimes](test/rake.test.runtimes.txt)
 
 ## Dependencies
 ```
@@ -57,16 +56,7 @@ Retention: save everything forever - iterate data driven automation
 
 from an engineers perspective ...
 
-What changed? Unanticipated load? material or communications failure?
-
-Most common answer will be an unanticipated use case, hence no
-validation of the automated responce to the event.
-
-Provide complete relative details for imperfections with responce time
-relative to age and utilization.
-
-Single entry point (url) for application, system and hardware status
-with built in research paths.
+What changed? Unanticipated load? material or communications failure? Most common answer will be an unanticipated use case.
 
 Ties user activity to hardware performance.
 
@@ -76,11 +66,6 @@ BIG CIRCLE, not a dot :).
 
 The dash is what happens next. Respond to the dot and it provides the
 path to more detail relative to who you are.
-
-as the images provide the research path and ongoing status, the are
-watching your progress, time to action, actions taken through
-closure.  We live we Learn :). When everyone's responce to the dot is
-to smile and stop looking, we get to play with then next toy
 
 Every imperfection generates and assigns a ticket. closed tickets
 include automation potential.
