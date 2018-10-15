@@ -10,70 +10,46 @@ Red dot   - Dash'ing     - 2+ high priority tickets
 
 POC iterations
 
-[![Test Build Status](https://travis-ci.org/pahoughton/...png)](https://travis-ci.org/pahoughton/..)
+[![Test Build Status](https://travis-ci.org/pahoughton/dot-dash.png)](https://travis-ci.org/pahoughton/dot-dash)
 
-## dependencies
 
-- el (yum) - yum install ansible
-- deb (apt) - apt install ansible
-- all
 
-pip3 install ansible
-$ git clone https://github.com/pahoughton/dot-dash
-$ cd dash-dot
-# yum|apt install pip3 g++ libffi-dev libre2-dev libssl-dev
-$ FIXME sudo ansible-playbook -p depend-site.yml
+## Dependencies
+
+	$ [ -e yum ] && sudo yum install ansible
+	$ [ -e apt ] && sudo apt install ansible
+
+	$ git clone https://github.com/pahoughton/dot-dash
+	$ cd dash-dot
+	$ sudo ansible-playbook -p site-depends.yml
 
 ## Validation
 
-rake test
-# do grep ':[0-9]+ molecule test' test/rake.test.runtimes.txt ; done
-# echo for test run times
-# do tail -f test/rake.test.runtimes.txt ; done
-# echo to watch progress
-  758  pip3 install ansible molecule pytest pytest-spec testinfra
+	rake test
+    $ do grep ':[0-9]+ molecule test' test/rake.test.runtimes.txt ; done
+    # echo for test run times
+    $ do tail -f test/rake.test.runtimes.txt ; done
+    # echo to watch progress
 
 ## Features
 
- - Open Source
- - Monitoring system
-	 response times
-	 resource utilization
-	 applications
-	 hardware
- - Alerting system
- - Ticket system
+- Monitoring system
+- Alerting system
+- Open Source
 
-## Tools (FIXME LINKS)
+### Monitoring
 
-monitoring:
-  Prometheus node exporter
-  Telegraf
-  syslog
-  LogStash
-  Metricbeat
+- response times
+- resource utilization
+- applications
+- hardware
 
-alerting:
-  ElasticSearch(ELK)
-    open source
-    designed for long term storage
-  Prometheus
-	open source
-    15 day retention w/o easy long term storage
-    https://prometheus.io/docs/alerting/overview/
-    https://www.robustperception.io/scaling-and-federating-prometheus/
+### Alerting
 
-Graphs:  Grafana
-ci/cd:   Zuul
-ticket:
-    jira
-		has api
-		has alerting interfaces (ELK & Prometheus)
-	bugzilla - loosing popularity to phabricator
-	phabricator
-	   has api
-	   does not have interface w/ alerting tools
-	openproject https://github.com/opf/openproject
+- auto ticket generation
+- ticket creation drives notification (sms/email)
+- tickets updated by ci workflows
+
 
 ## Use Cases
 
@@ -121,6 +97,56 @@ can do to beautify the dot.
 
 end game? elimination of repetition through iterative validation
 (D.R.Y.).
+
+
+
+
+## Tools (FIXME LINKS)
+
+monitoring:
+  Prometheus node exporter
+  Telegraf
+  syslog
+  LogStash
+  Metricbeat
+
+alerting:
+  ElasticSearch(ELK)
+    open source
+    designed for long term storage
+  Prometheus
+	open source
+    15 day retention w/o easy long term storage
+    https://prometheus.io/docs/alerting/overview/
+    https://www.robustperception.io/scaling-and-federating-prometheus/
+
+Graphs:  Grafana
+
+ticket:
+    jira
+		has api
+		has alerting interfaces (ELK & Prometheus)
+	bugzilla - loosing popularity to phabricator
+	phabricator
+	   has api
+	   does not have interface w/ alerting tools
+	   https://secure.phabricator.com/book/phabricator/article/installation_guide/
+	openproject https://github.com/opf/openproject
+
+Validation:
+	ci - zuul
+	serverspec - testinfra, rspec-serverspec
+	ansible - molecule
+	python - tox, pytest, pytest-spec
+	ruby - rspec
+
+Repo Managers
+	yum
+	apt
+	pip
+	gem
+	cpan
+	git
 
 
 ## Install
