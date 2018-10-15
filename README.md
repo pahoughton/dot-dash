@@ -8,7 +8,7 @@ Red dot   - Dash'ing     - 2+ high priority tickets
 
 ## Status
 
-POC iterations
+POC iterations (rake.test.runtimes.txt i hope)[test/rake.test.runtimes.txt]
 
 [![Test Build Status](https://travis-ci.org/pahoughton/dot-dash.png)](https://travis-ci.org/pahoughton/dot-dash)
 
