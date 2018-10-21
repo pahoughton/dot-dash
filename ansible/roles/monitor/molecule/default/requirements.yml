@@ -1,0 +1,5 @@
+# 2018-10-20 (cc) <paul4hough@gmail.com>
+#
+---
+- src: https://github.com/mrlesmithjr/ansible-influxdb
+  name: influxdb

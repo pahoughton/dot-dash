@@ -1,2 +1,34 @@
 ---
 # defaults file for monitor
+influxdb_admin:
+  bind_address: ""
+  # The default bind port used by the admin service.
+  bind_port: 8183
+
+influxdb_collectd:
+  auth_file: /etc/collectd/auth_file
+  typesdb: /usr/local/share/collectd
+
+influxdb_data:
+  dir: /var/lib/influxdb/data
+  wal_dir: /var/lib/influxdb/wal
+
+
+influxdb_debian_pre_reqs:
+  - apt-transport-https
+  - python-pip
+
+influxdb_debian_repo: "deb https://repos.influxdata.com/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }} stable"
+
+influxdb_debian_repo_key: https://repos.influxdata.com/influxdb.key
+
+
+influxdb_http:
+  bind_port: 8186
+
+influxdb_meta:
+  dir: /var/lib/influxdb/meta
+
+
+influxdb_redhat_repo: https://repos.influxdata.com/rhel/\$releasever/\$basearch/stable
+influxdb_redhat_repo_key: https://repos.influxdata.com/influxdb.key

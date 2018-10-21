@@ -1,2 +1,6 @@
 ---
 # tasks file for monitor
+
+- name: install influxdb
+  include_role:
+    name: influxdb
