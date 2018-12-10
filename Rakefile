@@ -1,24 +1,26 @@
 # 2018-10-14 (cc) <paul4hough@gmail.com>
 #
-# 2018-10-14 (cc) <paul4hough@gmail.com>
-#
+
 $runstart = Time.now
-runtimes_fn = "#{Dir.pwd}/test/rake.test.runtimes.txt"
 
 at_exit {
-  runtime = Time.now - $runstart
-  sh "date '+%F-%X molecule test stop' >> #{runtimes_fn} "
-  # clean output stored raw
-  sh "tail -50 < #{runtimes_fn} | sed \"s,\\x1B\\[[0-9;]*[a-zA-Z],,g\" "
+  runtime = Time.at(Time.now - $runstart).utc.strftime("%H:%M:%S.%3N")
   puts "run time: #{runtime}"
 }
 
-task :default => [:test,]
+task :default do
+  sh 'rake --tasks'
+  exit 1
+end
 
-task :test do
-  sh "date '+%F-%X molecule test start' >> #{runtimes_fn}"
-  pdir = Dir.pwd
-  Dir.chdir( 'test/deployment/roles/serverspec' )
-  sh "molecule test >> #{runtimes_fn} 2>&1"
-  Dir.chdir( pwd )
+task :ansible_syntax do |task, args|
+  sh "ansible-playbook --syntax-check --list-tasks site.yml -i cbed,"
+end
+
+task :provision do |task, args|
+  sh "vagrant provision"
+end
+
+task :vup do |task, args|
+  sh "vagrant up"
 end

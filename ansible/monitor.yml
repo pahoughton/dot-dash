@@ -1,0 +1,33 @@
+# 2018-10-24 (cc) <paul4hough@gmail.com>
+#
+---
+- hosts: monitor
+
+  tasks:
+    - name: create prometheus user
+      become: true
+      user:
+        name: prometheus
+        group: prometheus
+
+    - name: mkdir /opt/prometheus
+      become: true
+      file:
+        path: /opt/prometheus/bin
+        state: directory
+        owner: prometheus
+        group: prometheus
+        mode:  0775
+
+    # fixme version
+    - name: extract prometheus tar file
+      become: prometheus
+      unarchive:
+        src: /srv/mirrors/apps/linux/prometheus-2.6.0-rc.0.linux-amd64.tar.gz
+        dest: /tmp
+
+    - name: move promethies binary
+      command: mv prometheus /opt/prometheus/bin
+      args:
+        chdir: /tmp/prometheus-2.6.0-rc.0.linux-amd64
+        creates: /opt/prometheus/bin/prometheus
