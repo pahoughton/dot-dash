@@ -1,0 +1,54 @@
+# 2018-12-15 (cc) <paul4hough@gmail.com>
+#
+---
+remediation:
+  detect:
+    user
+    log
+    metric
+  notify:
+    ticket
+    email
+    chat
+    page
+  respond:
+    evaluate
+    communicate
+    resolve
+  improve:
+    cause
+    detection
+    notification
+    responce
+
+
+- who: operations support
+- what: problem remediation
+- how:
+  detection:
+    types:
+      - hardware
+      - users
+      - operating system
+      - database
+      - middleware
+      - applications
+  notification:
+  responce:
+  resolution:
+  - alerting:
+    - tickets
+    - emails
+    - chats
+  - documentation:
+    - troublshoot
+    - interm resolution
+    - root cause
+  - remediation:
+    - bug-fix
+    - scaling
+    - migration
+  - platforms:
+    - unix
+    - windows
+    - mainframe
